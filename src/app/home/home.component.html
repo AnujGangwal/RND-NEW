@@ -1,0 +1,46 @@
+<div class="contianer">
+
+  <div class="row" *ngIf="admin">
+    <div class="col-lg-4 card">
+      <h4>Transcations</h4>
+    </div>
+    <div class="col-lg-4 card">
+        <h4>Change Rights</h4>
+      </div>
+      <div class="col-lg-4 card">
+          <h4>Check status</h4>
+       </div>
+  </div>
+
+  <div class="row" *ngIf="!admin">
+    <div class="col-lg-4 card">
+      <h4>Fill Form</h4>
+    </div>
+    <div class="col-lg-4 card">
+        <h4>Enter Customer Details</h4>
+    </div>
+    <div class="col-lg-4 card">
+      <h4>Change Password</h4>
+    </div>
+  </div>
+
+  <div class="col-lg-12">
+      <table>
+        <thead>
+          <th>Employee</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let emp of employeeData">
+            <td>
+              Employee Name: {{emp.employeeName}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+
+  <div class="col-lg-4 card" (click)="logout()">
+      <h4>Logout</h4>
+    </div>
+
+</div>

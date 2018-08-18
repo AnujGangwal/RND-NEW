@@ -1,0 +1,37 @@
+<div class="logincontainer">
+  <form name="loginDetails" #loginDetails="ngForm" method="post" class="card" >
+    <div class="col-lg-4">
+      <label for="Username">UserName</label>
+      <input type="text" [(ngModel)]="user" id="Username" name="userId" #Username="ngModel" required />
+      <div *ngIf="Username.errors && (Username.dirty || Username.touched)" >
+              <p [hidden]="!Username.errors.required" >
+                Username is required!
+              </p>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <label for="Password">Password</label>
+      <input type="text" [(ngModel)]="password" id="Password" name="password" #Password="ngModel" required />
+      <div *ngIf="Password.errors && (Password.dirty || Password.touched)" >
+              <p [hidden]="!Password.errors.required" >
+                Password is required!
+              </p>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <input type="submit" value="submit" (click)="login()" [disabled]="loginDetails.form.invalid" />
+   </div>
+   <div>
+     <p *ngIf="block">Invalid Credentials</p>
+   </div>
+</form>
+
+
+<div>
+  <p>I was faced some dependencies challenges in previous version.</p>
+  <p>Here i added form validation and css.</p>
+  <p>I don't have API to call but I create service file, method and import that call that method in component.</p>
+</div>
+</div>
